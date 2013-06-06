@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- Dominique Houston -->
+<!-- VFW 1306 -->
+<!-- Assignment 1 -->
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Keep track of the books you've read." />
+		<meta name="keywords" content="" />
+		<meta name="ROBOTS" content="index, nofollow" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<meta name="author" content="Dominique Houston" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>Bookeep</title>	
+	</head>
+	<body>
+		<! -- Begin Container --  >
+		<div id="container">
+			<! -- Begin Header -- >
+			<header>
+				<h1>Bookeep</h1>
+				<p>Keep track of the books you've read.</p>
+			</header>
+			<! -- End Header -- >
+
+			<! -- Begin Navigation -- >
+			<nav>
+				<ul id="appNav">
+					<li><a href="additem.html">Add a Title</a></li>
+					<li><a href="#">Clear Stored Data</a></li>
+					<li><a href="#">Display Data</a></li>
+				</ul>
+			</nav>
+			<! -- End Navigation -- >
+
+			<! -- Begin Form -- >
+			
+			<form action="#" method="post" id="bookeepForm">
+
+				<fieldset>
+					<legend><strong><small>Add A Title to Bookeep</small></strong></legend>
+
+
+				<div class="labelHead"><label class="headLabel"><strong>Bookeep Title Info</strong></label></div>
+					<label for="workTitle">Title</label>
+					<input type="text" id="workTitle" placeholder="Work Title" />
+					<label for="authorName">Author:</label>
+					<input type="text" id="authorName" placeholder="Author Name" />
+
+					<br /><br />
+					
+				<label class="headLabel">Have you read this title/book yet?</label><br>
+					<input type="radio" class="radioButton" name="readTitle" value="yes">Yes<br>
+					<input type="radio" name="readTitle" value="yes">No<br>
+
+
+					<br /><br />
+					
+								</fieldset>
+
+
+			</form>
+
+			
+			<! -- End Form  -- >
+
+			<! -- Begin Footer -- >
+			<footer>
+				<p>Copyright &copy; 2013 Dominique Houston</p>
+			</footer>
+			<! -- End Footer -->
+		</div>
+		<! -- End Container -->
+		
+		<! -- Javascript -- >
+		<script src="js/main.js" type="text/javascript"></script>
+	</body>
+</html>
