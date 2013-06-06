@@ -5,8 +5,8 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="description" content="Keep track of the books you've read." />
-		<meta name="keywords" content="" />
+		<meta name="description" content="Keep track of the books, magazines, articles, and blogs you've read." />
+		<meta name="keywords" content="bookeep,track,books,reading,logger" />
 		<meta name="ROBOTS" content="index, nofollow" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
 		<meta name="author" content="Dominique Houston" />
@@ -19,11 +19,11 @@
 			<! -- Begin Header -- >
 			<header>
 				<h1>Bookeep</h1>
-				<p>Keep track of the books you've read.</p>
+				<p>Keep track of the books, magazines, articles, and blogs you've read.</p>
 			</header>
 			<! -- End Header -- >
 
-			<! -- Begin Navigation -- >
+			<! -- Begin  Top Navigation -- >
 			<nav>
 				<ul id="appNav">
 					<li><a href="additem.html">Add a Title</a></li>
@@ -31,58 +31,85 @@
 					<li><a href="#">Display Data</a></li>
 				</ul>
 			</nav>
-			<! -- End Navigation -- >
+			<! -- End Top Navigation -- >
 
 			<! -- Begin Form -- >
-			
 			<form action="#" method="post" id="bookeepForm">
 
 				<fieldset>
 					<legend><strong><small>Add A Title to Bookeep</small></strong></legend>
-
-
-				<p><label class="headLabel"><strong>Bookeep Title Info</strong></label></p>
-					<label for="workTitle">Title</label>
-					<input type="text" id="workTitle" placeholder="Work Title" />
-					<label for="authorName">Author:</label>
-					<input type="text" id="authorName" placeholder="Author Name" />
-					<label for="authorName">Year Published:</label>
-					<input type="text" id="yearPublished" placeholder="Year Published" />
-
+	
+	
+					<p><label class="headLabel"><strong>Bookeep Title Info</strong></label></p>
+						<p><label for="Title">Title</label>
+						<input type="text" id="workTitle" placeholder="Work Title" /></p>
+						<p><label for="authorName">Author:</label>
+						<input type="text" id="workAuthorName" placeholder="Author Name" /></p>
+						<p><label for="authorName">Year Published:</label>
+						<input type="text" id="workYearPublished" placeholder="Year Published" /></p>
+						<p><label for="authorName">URL (if applicable):</label>
+						<input type="text" id="workUrl" placeholder="http://" /></p>
+	
+						
+					<p><label class="labelHead">Have you completed this title/book yet?</label></p>
+						<input type="radio" class="radioButton" name="readTitle" value="yes">Yes<br>
+						<input type="radio" name="readTitle" value="yes">No<br>
+	
+						
+					<p><label class="labelHead">Reason for reading this title/book:</label></p>
+	
+						<input type="checkbox" id="work" name="priority" value="work">Work<br>
+						<input type="checkbox" id="school" name="priority" value="school">School<br>
+						<input type="checkbox" id="pleasure" name="priority" value="pleasure">Pleasure<br>
+						<input type="checkbox" id="research" name="priority" value="research">Research<br>
+	
+	
+					<p><label class="labelHead">What platform was used to read this title?</label></p>
+					<select id="readPlatform">
+						<optgroup label="Digital">
+							<option value="Tablet">Tablet/eReader</option>
+							<option value="eBook">eBook</option>
+							<option value="pcNotebook">PC/Notebook</option>
+							<option value="DigiOther">Other</option>
+						</optgroup>
+						<optgroup label="Traditional">
+							<option value="Paperback">Paperback</option>
+							<option value="HardCover">Hard Cover</option>
+							<option value="TradOther">Other</option>
+						</optgroup>
+					</select>
 					
-				<p><label class="labelHead">Have you completed this title/book yet?</label></p>
-					<input type="radio" class="radioButton" name="readTitle" value="yes">Yes<br>
-					<input type="radio" name="readTitle" value="yes">No<br>
-
+						
+					<p><label class="labelHead">Notes/Comments:</label></p>
+					<textarea name="text" rows="5" cols="40"> </textarea><br>
+	
+					<p><label class="labelHead">Reading Start Date:</label></p>
+					<input type="date" id="readStart" name="readStartDate"/>
 					
-				<p><label class="labelHead">Reason for reading this title/book:</label></p>
-
-					<input type="checkbox" id="work" name="priority" value="work">Work<br>
-					<input type="checkbox" id="school" name="priority" value="school">School<br>
-					<input type="checkbox" id="pleasure" name="priority" value="pleasure">Pleasure<br>
-					<input type="checkbox" id="research" name="priority" value="research">Research<br>
-
-
-				<p><label class="headLabel">What platform was used to read this title?</label></p>
-				<select id="readPlatform">
-					<optgroup label="Digital">
-						<option value="Tablet">Tablet/eReader</option>
-						<option value="eBook">eBook</option>
-					</optgroup>
-					<optgroup label="Traditional">
-						<option value="Paperback">Paperback</option>
-						<option value="HardCover">Hard Cover</option>
-					</optgroup>
-				</select>
-					<br /><br />
+					<p><label class="labelHead">Reading Finish Date:</label></p>
+					<input type="date" id="readFinish" name="readFinishDate"/>
+	
+					<p><label class="labelHead">Rate the Title:</label></p>
+					0 <input id="stars" type="range"  min="1" max="10"> 10 
 					
-								</fieldset>
+					<input type="hidden" id="reader" value="evaluation">
+					
+					<p><input id="button" type="button" value="SUBMIT"></p>
+				</fieldset>
 
 
 			</form>
-
-			
 			<! -- End Form  -- >
+
+			<! -- Begin  Bottom Navigation -- >
+			<nav>
+				<ul id="appNavFooter">
+					<li><a href="additem.html">Add a Title</a></li>
+					<li><a href="#">Clear Stored Data</a></li>
+					<li><a href="#">Display Data</a></li>
+				</ul>
+			</nav>
+			<! -- End Bottom Navigation -- >
 
 			<! -- Begin Footer -- >
 			<footer>
