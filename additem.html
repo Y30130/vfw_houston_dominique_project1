@@ -41,19 +41,39 @@
 					<legend><strong><small>Add A Title to Bookeep</small></strong></legend>
 
 
-				<div class="labelHead"><label class="headLabel"><strong>Bookeep Title Info</strong></label></div>
+				<p><label class="headLabel"><strong>Bookeep Title Info</strong></label></p>
 					<label for="workTitle">Title</label>
 					<input type="text" id="workTitle" placeholder="Work Title" />
 					<label for="authorName">Author:</label>
 					<input type="text" id="authorName" placeholder="Author Name" />
+					<label for="authorName">Year Published:</label>
+					<input type="text" id="yearPublished" placeholder="Year Published" />
 
-					<br /><br />
 					
-				<label class="headLabel">Have you read this title/book yet?</label><br>
+				<p><label class="labelHead">Have you completed this title/book yet?</label></p>
 					<input type="radio" class="radioButton" name="readTitle" value="yes">Yes<br>
 					<input type="radio" name="readTitle" value="yes">No<br>
 
+					
+				<p><label class="labelHead">Reason for reading this title/book:</label></p>
 
+					<input type="checkbox" id="work" name="priority" value="work">Work<br>
+					<input type="checkbox" id="school" name="priority" value="school">School<br>
+					<input type="checkbox" id="pleasure" name="priority" value="pleasure">Pleasure<br>
+					<input type="checkbox" id="research" name="priority" value="research">Research<br>
+
+
+				<p><label class="headLabel">What platform was used to read this title?</label></p>
+				<select id="readPlatform">
+					<optgroup label="Digital">
+						<option value="Tablet">Tablet/eReader</option>
+						<option value="eBook">eBook</option>
+					</optgroup>
+					<optgroup label="Traditional">
+						<option value="Paperback">Paperback</option>
+						<option value="HardCover">Hard Cover</option>
+					</optgroup>
+				</select>
 					<br /><br />
 					
 								</fieldset>
