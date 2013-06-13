@@ -85,16 +85,18 @@ header p {
 
 nav {margin:0px;padding:10px 0px;margin:0px 20px;}
 
-nav ul#appNav {
+nav ul {
+	margin:0px auto;
 	list-style-type:square;
 	color:teal;
 	border-bottom: 1px solid #002020;
 	padding: 5px 20px;
 }
-nav ul#appNav:hover {
+nav ul:hover {
 	list-style-type:square;
 	color:#000;
 }
+nav ul li {display:inline-block;margin:0px 15%;}
 
 form {color:#111;text-shadow:none;margin:10px;max-width:780px;}
 
