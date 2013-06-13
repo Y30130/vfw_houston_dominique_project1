@@ -3,121 +3,164 @@
 <!-- VFW 1306 -->
 <!-- Assignment 1 -->
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="description" content="Keep track of the books, magazines, articles, and blogs you've read." />
-		<meta name="keywords" content="bookeep,track,books,reading,logger" />
-		<meta name="ROBOTS" content="index, nofollow" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="author" content="Dominique Houston" />
-	    <link href="css/style.css" rel="stylesheet" />
-		<title>Bookeep</title>	
-	</head>
-	<body>
-		<! -- Begin Container --  >
-		<div id="container">
-			<! -- Begin Header -- >
-			<div id="wrap">
-			<header>
-				<a href="index.html"><h1>Bookeep</h1></a>
-				<p>Keep track of the books, magazines, articles, and blogs you've read.</p>
-			</header>
-			<! -- End Header -- >
-			
-			<! -- Begin  Bottom Navigation -- >
-			<nav>
-				<ul id="appNav">
-					<li><a href="#" id="clearLink">Clear Stored Data</a></li>
-					<li><a href="#" id="displayLink">Display Data</a></li>
-					<li id="addNew" style="display:none;"><a href="addItem.html">Add New Title</a></li>
-				</ul>
-			</nav>
-			<! -- End Bottom Navigation -- >
-			<! -- Error Messages -- >
-			<ul id="errors"></ul>
-			<! -- End Error Messages -- >
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Keep track of the books, magazines, articles, and blogs you've read." />
+<meta name="keywords" content="bookeep,track,books,reading,logger" />
+<meta name="ROBOTS" content="index, nofollow" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="Dominique Houston" />
+<link href="css/styles.css" rel="stylesheet" />
+<title>Bookeep</title>
+</head>
+<body>
+<! -- Begin Container --  >
+<div id="container"> 
+  <! -- Begin Header -- >
+  <div id="wrap">
+    <header> <a href="index.html">
+      <h1>Bookeep</h1>
+      </a>
+      <p>Keep track of the books, magazines, articles, and blogs you've read.</p>
+    </header>
+    <! -- End Header -- > 
+    
+    <! -- Begin  Bottom Navigation -- >
+    <nav>
+      <ul id="appNav">
+        <li><a href="#" id="clearLink">Clear Stored Data</a></li>
+        <li><a href="#" id="displayLink">Display Data</a></li>
+        <li id="addNew" style="display:none;"><a href="addItem.html">Add New Title</a></li>
+      </ul>
+    </nav>
+    <! -- End Bottom Navigation -- > 
+    <! -- Error Messages -- >
+    <ul id="errors">
+    </ul>
+    <! -- End Error Messages -- > 
+    
+    <! -- Begin Form -- >
+    <form action="#" method="post" id="bookeepForm">
+      <fieldset>
+        <legend>
+	        <strong>
+	        	<medium>Add A Title to Bookeep</medium>
+	        </strong>
+        </legend>
+        
+        <p>
+          <label class="headLabel"><strong>Bookeep Title Info</strong></label>
+        </p>
+        
+        <p>
+          <label for="Title">Title</label>
+          <input type="text" id="workTitle" placeholder="Work Title" />
+        </p>
+        
+        <p>
+          <label for="authorName">Author:</label>
+          <input type="text" id="workAuthorName" placeholder="Author Name" />
+        </p>
+        
+        <p>
+          <label for="authorName">Year Published:</label>
+          <input type="text" id="workYearPublished" placeholder="Year Published" />
+        </p>
+        
+        <p>
+          <label for="authorName">URL (if applicable):</label>
+          <input type="text" id="workUrl" placeholder="http://" />
+        </p>
+        
+        <p>
+          <label class="labelHead">Finished reading book/title?</label>
+        </p>
+        <div class="clear"></div>
+        <p>
+          <input type="radio" class="radioButton" name="readTitle" value="yes">
+          Yes</p>
+        <p>
+          <input type="radio" name="readTitle" value="yes">
+          No</p>
+          
+        <p>
+          <label class="labelHead">Is this title a favorite?</label>
+        </p>
+        <div class="clear"></div>
+        <p>
+          <input type="checkbox" id="fav" name="fav" value="favorite">
+          Save as Favorite</p>
+          
+        <li id="dropDown">
+          <p>
+            <label class="labelHead">Where did you read it?</label>
+          </p>
+        </li>
+        
+        <p>
+          <label class="labelHead">Notes/Comments:</label>
+        </p>
+        <div class="clear"></div>
+        <p>
+          <textarea name="text" rows="5" cols="40" id="notes"> </textarea>
+        </p>
+        
+        <p>
+          <label class="labelHead">Reading Start Date:</label>
+        </p>
+        <div class="clear"></div>
+        <p>
+          <input type="date" id="readStart" name="readStartDate"/>
+        </p>
+        
+        <p>
+          <label class="labelHead">Reading Finish Date:</label>
+        </p>
+        <div class="clear"></div>
+        <p>
+          <input type="date" id="readFinish" name="readFinishDate"/>
+        </p>
+        
+        <p>
+          <label class="labelHead">Rate the Title:</label>
+        </p>
+        <div class="clear"></div>
+        <p>
+        <div class="rate_0 floatLeft">0</div>
+        <div class="floatLeft">
+          <input id="stars" type="range"  min="1" max="10">
+        </div>
+        <div class="rate_10 floatLeft">10</div>
+        </p>
+        <div class="clear"></div>
+        <input type="hidden" id="reader" value="evaluation">
+        
+        <p>
+          <input id="submit" type="button" value="SUBMIT">
+        </p>
+      </fieldset>
+    </form>
+    <! -- End Form  -- > 
+    
+    <! -- Begin  Bottom Navigation -- >
+    <nav>
+      <ul id="appNavFooter">
+        <li><a href="#" id="clearLink">Clear Stored Data</a></li>
+        <li><a href="#" id="displayLink">Display Data</a></li>
+        <li id="addNew" style="display:none;"><a href="addItem.html">Add New Title</a></li>
+      </ul>
+    </nav>
+    <! -- End Bottom Navigation -- > 
+    
+  </div>
+  <! -- Begin Footer -- >
+  <footer>
+    <p>Copyright &copy; 2013 Dominique Houston</p>
+  </footer>
+  <! -- End Footer --> 
+</div>
+<! -- End Container --> 
 
-			<! -- Begin Form -- >
-			<form action="#" method="post" id="bookeepForm">
-
-				<fieldset>
-					<legend><strong><medium>Add A Title to Bookeep</medium></strong></legend>
-	
-	
-					<p><label class="headLabel"><strong>Bookeep Title Info</strong></label></p>
-						<p><label for="Title">Title</label>
-						<input type="text" id="workTitle" placeholder="Work Title" /></p>
-						<p><label for="authorName">Author:</label>
-						<input type="text" id="workAuthorName" placeholder="Author Name" /></p>
-						<p><label for="authorName">Year Published:</label>
-						<input type="text" id="workYearPublished" placeholder="Year Published" /></p>
-						<p><label for="authorName">URL (if applicable):</label>
-						<input type="text" id="workUrl" placeholder="http://" /></p>
-	
-						
-					<p><label class="labelHead">Finished reading book/title?</label></p>
-					<div class="clear"></div>
-						<p><input type="radio" class="radioButton" name="readTitle" value="yes">Yes</p>
-						<p><input type="radio" name="readTitle" value="yes">No</p>
-	
-						
-					<p><label class="labelHead">Is this title a favorite?</label></p>
-					<div class="clear"></div>
-						<p><input type="checkbox" id="fav" name="fav" value="favorite">Save as Favorite</p>
-	
-					<li id="dropDown">
-					
-					<p><label class="labelHead">Where did you read it?</label></p>
-					
-					</li>
-					
-					
-						
-					<p><label class="labelHead">Notes/Comments:</label></p>
-					<div class="clear"></div>
-					<p><textarea name="text" rows="5" cols="40" id="notes"> </textarea></p>
-	
-					<p><label class="labelHead">Reading Start Date:</label></p>
-					<div class="clear"></div>
-					<p><input type="date" id="readStart" name="readStartDate"/></p>
-					
-					<p><label class="labelHead">Reading Finish Date:</label></p>
-					<div class="clear"></div>
-					<p><input type="date" id="readFinish" name="readFinishDate"/></p>
-	
-					<p><label class="labelHead">Rate the Title:</label></p>
-					<div class="clear"></div>
-					<p><div class="rate_0 floatLeft">0</div> <div class="floatLeft"><input id="stars" type="range"  min="1" max="10"></div> <div class="rate_10 floatLeft">10</div></p>
-					<div class="clear"></div>
-					
-					<input type="hidden" id="reader" value="evaluation">
-					
-					<p><input id="submit" type="button" value="SUBMIT"></p>
-				</fieldset>
-
-
-			</form>
-			<! -- End Form  -- >
-
-			<! -- Begin  Bottom Navigation -- >
-			<nav>
-				<ul id="appNavFooter">
-					<li><a href="#" id="clearLink">Clear Stored Data</a></li>
-					<li><a href="#" id="displayLink">Display Data</a></li>
-				</ul>
-			</nav>
-			<! -- End Bottom Navigation -- >
-
-		
-		</div>
-			<! -- Begin Footer -- >
-			<footer>
-				<p>Copyright &copy; 2013 Dominique Houston</p>
-			</footer>
-			<! -- End Footer -->
-		</div>
-		<! -- End Container -->
-		
-		<script src="js/main.js" type="text/javascript"></script>
-	</body>
+<script src="js/main.js" type="text/javascript"></script>
+</body>
 </html>
