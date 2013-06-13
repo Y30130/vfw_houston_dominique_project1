@@ -10,14 +10,16 @@
 		<meta name="ROBOTS" content="index, nofollow" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
 		<meta name="author" content="Dominique Houston" />
+	    <link href="css/style.css" rel="stylesheet" />
 		<title>Bookeep</title>	
 	</head>
 	<body>
 		<! -- Begin Container --  >
 		<div id="container">
 			<! -- Begin Header -- >
+			<div id="wrap">
 			<header>
-				<h1>Bookeep</h1>
+				<a href="index.html"><h1>Bookeep</h1></a>
 				<p>Keep track of the books, magazines, articles, and blogs you've read.</p>
 			</header>
 			<! -- End Header -- >
@@ -41,20 +43,22 @@
 	
 						
 					<p><label class="labelHead">Have you completed this title/book yet?</label></p>
-						<input type="radio" class="radioButton" name="readTitle" value="yes">Yes<br>
-						<input type="radio" name="readTitle" value="yes">No<br>
+					<div class="clear"></div>
+						<p><input type="radio" class="radioButton" name="readTitle" value="yes">Yes</p>
+						<p><input type="radio" name="readTitle" value="yes">No</p>
 	
 						
 					<p><label class="labelHead">Reason for reading this title/book:</label></p>
-	
-						<input type="checkbox" id="work" name="priority" value="work">Work<br>
-						<input type="checkbox" id="school" name="priority" value="school">School<br>
-						<input type="checkbox" id="pleasure" name="priority" value="pleasure">Pleasure<br>
-						<input type="checkbox" id="research" name="priority" value="research">Research<br>
+					<div class="clear"></div>
+						<p><input type="checkbox" id="work" name="priority" value="work">Work</p>
+						<p><input type="checkbox" id="school" name="priority" value="school">School</p>
+						<p><input type="checkbox" id="pleasure" name="priority" value="pleasure">Pleasure</p>
+						<p><input type="checkbox" id="research" name="priority" value="research">Research</p>
 	
 	
 					<p><label class="labelHead">What platform was used to read this title?</label></p>
-					<select id="readPlatform">
+					<div class="clear"></div>
+					<p><select id="readPlatform">
 						<optgroup label="Digital">
 							<option value="Tablet">Tablet/eReader</option>
 							<option value="eBook">eBook</option>
@@ -67,19 +71,24 @@
 							<option value="TradOther">Other</option>
 						</optgroup>
 					</select>
+					</p>
 					
 						
 					<p><label class="labelHead">Notes/Comments:</label></p>
-					<textarea name="text" rows="5" cols="40"> </textarea><br>
+					<div class="clear"></div>
+					<p><textarea name="text" rows="5" cols="40"> </textarea></p>
 	
 					<p><label class="labelHead">Reading Start Date:</label></p>
-					<input type="date" id="readStart" name="readStartDate"/>
+					<div class="clear"></div>
+					<p><input type="date" id="readStart" name="readStartDate"/></p>
 					
 					<p><label class="labelHead">Reading Finish Date:</label></p>
-					<input type="date" id="readFinish" name="readFinishDate"/>
+					<div class="clear"></div>
+					<p><input type="date" id="readFinish" name="readFinishDate"/></p>
 	
 					<p><label class="labelHead">Rate the Title:</label></p>
-					0 <input id="stars" type="range"  min="1" max="10"> 10 
+					<div class="clear"></div>
+					<p>0 <input id="stars" type="range"  min="1" max="10"> 10</p>
 					
 					<input type="hidden" id="reader" value="evaluation">
 					
@@ -99,6 +108,8 @@
 			</nav>
 			<! -- End Bottom Navigation -- >
 
+		
+		</div>
 			<! -- Begin Footer -- >
 			<footer>
 				<p>Copyright &copy; 2013 Dominique Houston</p>
