@@ -29,6 +29,7 @@
 				<ul id="appNav">
 					<li><a href="#" id="clearLink">Clear Stored Data</a></li>
 					<li><a href="#" id="displayLink">Display Data</a></li>
+					<li id="addNew" style="display:none;"><a href="addItem.html">Add New Title</a></li>
 				</ul>
 			</nav>
 			<! -- End Bottom Navigation -- >
@@ -40,7 +41,7 @@
 			<form action="#" method="post" id="bookeepForm">
 
 				<fieldset>
-					<legend><strong><small>Add A Title to Bookeep</small></strong></legend>
+					<legend><strong><medium>Add A Title to Bookeep</medium></strong></legend>
 	
 	
 					<p><label class="headLabel"><strong>Bookeep Title Info</strong></label></p>
@@ -54,7 +55,7 @@
 						<input type="text" id="workUrl" placeholder="http://" /></p>
 	
 						
-					<p><label class="labelHead">Have you completed this title/book yet?</label></p>
+					<p><label class="labelHead">Finished reading book/title?</label></p>
 					<div class="clear"></div>
 						<p><input type="radio" class="radioButton" name="readTitle" value="yes">Yes</p>
 						<p><input type="radio" name="readTitle" value="yes">No</p>
@@ -65,8 +66,9 @@
 						<p><input type="checkbox" id="fav" name="fav" value="favorite">Save as Favorite</p>
 	
 					<li id="dropDown">
-					<p><label class="labelHead">What platform was used to read this title?</label></p>
-					<div class="clear"></div>
+					
+					<p><label class="labelHead">Where did you read it?</label></p>
+					
 					</li>
 					
 					
@@ -85,7 +87,8 @@
 	
 					<p><label class="labelHead">Rate the Title:</label></p>
 					<div class="clear"></div>
-					<p>0 <input id="stars" type="range"  min="1" max="10"> 10</p>
+					<p><div class="rate_0 floatLeft">0</div> <div class="floatLeft"><input id="stars" type="range"  min="1" max="10"></div> <div class="rate_10 floatLeft">10</div></p>
+					<div class="clear"></div>
 					
 					<input type="hidden" id="reader" value="evaluation">
 					
@@ -99,8 +102,8 @@
 			<! -- Begin  Bottom Navigation -- >
 			<nav>
 				<ul id="appNavFooter">
-					<li><a href="#">Clear Stored Data</a></li>
-					<li><a href="#">Display Data</a></li>
+					<li><a href="#" id="clearLink">Clear Stored Data</a></li>
+					<li><a href="#" id="displayLink">Display Data</a></li>
 				</ul>
 			</nav>
 			<! -- End Bottom Navigation -- >
