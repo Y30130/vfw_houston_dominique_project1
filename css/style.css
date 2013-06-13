@@ -98,17 +98,19 @@ nav ul:hover {
 }
 nav ul li {display:inline-block;margin:0px 15%;}
 
-form {color:#111;text-shadow:none;margin:10px;max-width:780px;}
+form {color:#111;text-shadow:none;margin:10px;max-width:780px;overflow:hidden;font-size:13px;}
 
 form legend {clear:both;}
-form .headLabel {clear:both;width:97%;margin:0px auto;margin-bottom:20px;}
+form .headLabel {clear:both;width:auto;font-size:18px;font-weight:bold;margin:0px auto;margin-bottom:20px;}
  
-form fieldset {border: 1px #002020 solid;}
+form fieldset {border: 0px #002020 solid;}
 
 form#bookeepForm p {margin:10px 0px 15px 0px;overflow:hidden;}
 
-form#bookeepForm label {background:teal;color:#FFF;padding:8px 10px;clear:both;font-size:12px;height:auto;float:left;}
-form#bookeepForm input, form#bookeepForm textarea {padding:8px 10px;height:auto;clear:both;width:auto;margin:0px 10px 5px 0px;border:1px solid teal;}
+form#bookeepForm label {background:teal;color:#FFF;padding:10px 10px;clear:both;height:auto;float:left;}
+form#bookeepForm input, form#bookeepForm textarea {padding:10px 10px;height:auto;clear:both;width:auto;margin:0px 10px 5px 0px;border:1px solid teal;line-height: 14px;}
+
+form li {list-style-type: none;}
 footer {
 	clear:both;
 	font-size:12px;

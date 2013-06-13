@@ -8,7 +8,7 @@
 		<meta name="description" content="Keep track of the books, magazines, articles, and blogs you've read." />
 		<meta name="keywords" content="bookeep,track,books,reading,logger" />
 		<meta name="ROBOTS" content="index, nofollow" />
-		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="author" content="Dominique Houston" />
 	    <link href="css/style.css" rel="stylesheet" />
 		<title>Bookeep</title>	
@@ -60,35 +60,20 @@
 						<p><input type="radio" name="readTitle" value="yes">No</p>
 	
 						
-					<p><label class="labelHead">Reason for reading this title/book:</label></p>
+					<p><label class="labelHead">Is this title a favorite?</label></p>
 					<div class="clear"></div>
-						<p><input type="checkbox" id="work" name="priority" value="work">Work</p>
-						<p><input type="checkbox" id="school" name="priority" value="school">School</p>
-						<p><input type="checkbox" id="pleasure" name="priority" value="pleasure">Pleasure</p>
-						<p><input type="checkbox" id="research" name="priority" value="research">Research</p>
+						<p><input type="checkbox" id="fav" name="fav" value="favorite">Save as Favorite</p>
 	
-	
+					<li id="dropDown">
 					<p><label class="labelHead">What platform was used to read this title?</label></p>
 					<div class="clear"></div>
-					<p><select id="readPlatform">
-						<optgroup label="Digital">
-							<option value="Tablet">Tablet/eReader</option>
-							<option value="eBook">eBook</option>
-							<option value="pcNotebook">PC/Notebook</option>
-							<option value="DigiOther">Other</option>
-						</optgroup>
-						<optgroup label="Traditional">
-							<option value="Paperback">Paperback</option>
-							<option value="HardCover">Hard Cover</option>
-							<option value="TradOther">Other</option>
-						</optgroup>
-					</select>
-					</p>
+					</li>
+					
 					
 						
 					<p><label class="labelHead">Notes/Comments:</label></p>
 					<div class="clear"></div>
-					<p><textarea name="text" rows="5" cols="40"> </textarea></p>
+					<p><textarea name="text" rows="5" cols="40" id="notes"> </textarea></p>
 	
 					<p><label class="labelHead">Reading Start Date:</label></p>
 					<div class="clear"></div>
@@ -104,7 +89,7 @@
 					
 					<input type="hidden" id="reader" value="evaluation">
 					
-					<p><input id="button" type="button" value="SUBMIT"></p>
+					<p><input id="submit" type="button" value="SUBMIT"></p>
 				</fieldset>
 
 
@@ -130,6 +115,6 @@
 		</div>
 		<! -- End Container -->
 		
-
+		<script src="js/main.js" type="text/javascript"></script>
 	</body>
 </html>
