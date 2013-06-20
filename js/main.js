@@ -109,7 +109,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		$('items').style.display = "block";
 		for(var i=0, len=localStorage.length; i<len;i++) {
 			var makeLi = document.createElement('li');
-			var linkLi = document.createElement('li');
+			var linksLi = document.createElement('li');
 			makeList.appendChild(makeLi);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
@@ -122,9 +122,9 @@ window.addEventListener("DOMContentLoaded", function(){
 		            createSubList.appendChild(createSubli);
 		            var optSubText = infoObj[y] [0] +" "+ infoObj[y] [1];
 		            createSubli.innerHTML = optSubText;
-		            createSubList.appendChild(linkLi);
+		            createSubList.appendChild(linksLi);
 		         }
-		          createItemLinks();  //Makes the edit and delete link for the items in LS
+		         createItemLinks();  //Creates the edit and delete link for the items in LocalStorage
 		         
 		      }
 		    
@@ -143,36 +143,6 @@ window.addEventListener("DOMContentLoaded", function(){
     }
 
 
-/*
-function validate(e){
-   var getworkTitle = $('workTitle');
-   var getworkAuthor = $('workAuthor');
-   var getworkYearPublished = $('workYearPublished');
-   
-   var errorArray = [];
-//Validation for name field  
-   if(getsName.value === "");{
-      var nameError = "Please enter your name.";
-      getsName.style.border = "1px soild red";
-      errorArray.push(nameError);
-   }
-//Validation for temp drop down
-   if(getTemp.value === "--Choose A Temp--");{
-      var tempError = "Please enter a temperature for the burger";
-      getTemp.style.border = "1px soild red";
-      errorArray.push(tempError);
-   }
-   //if there are errors, display them on the screen
-   if(errorArray.length >=1){
-      for(var i=0, j=errorArray.length; i<j; i++);
-         var txt = document.createElement('li');
-         txt.innnerHTML = errorArray[i];
-         errMsg.appendChild(txt);
-   }
-   
-}
-e.preventDefault();
-return false; */
     
     
 	// Variable defaults
