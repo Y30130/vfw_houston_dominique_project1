@@ -1,6 +1,6 @@
 // Dominique Houston
 // 1306 - VFW I
-// Assignment 2
+// Assignment 3
 //
 
 // Wait until the DOM is ready.
@@ -109,6 +109,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		$('items').style.display = "block";
 		for(var i=0, len=localStorage.length; i<len;i++) {
 			var makeLi = document.createElement('li');
+			var linkLi = document.createElement('li');
 			makeList.appendChild(makeLi);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
@@ -120,8 +121,10 @@ window.addEventListener("DOMContentLoaded", function(){
 		            var createSubli = document.createElement('li');
 		            createSubList.appendChild(createSubli);
 		            var optSubText = infoObj[y] [0] +" "+ infoObj[y] [1];
-		            createSubli.innerHTML = optSubText
+		            createSubli.innerHTML = optSubText;
+		            createSubList.appendChild(linkLi);
 		         }
+		          createItemLinks();  //Makes the edit and delete link for the items in LS
 		         
 		      }
 		    
@@ -138,6 +141,38 @@ window.addEventListener("DOMContentLoaded", function(){
 		    return false;
 	    }
     }
+
+
+/*
+function validate(e){
+   var getworkTitle = $('workTitle');
+   var getworkAuthor = $('workAuthor');
+   var getworkYearPublished = $('workYearPublished');
+   
+   var errorArray = [];
+//Validation for name field  
+   if(getsName.value === "");{
+      var nameError = "Please enter your name.";
+      getsName.style.border = "1px soild red";
+      errorArray.push(nameError);
+   }
+//Validation for temp drop down
+   if(getTemp.value === "--Choose A Temp--");{
+      var tempError = "Please enter a temperature for the burger";
+      getTemp.style.border = "1px soild red";
+      errorArray.push(tempError);
+   }
+   //if there are errors, display them on the screen
+   if(errorArray.length >=1){
+      for(var i=0, j=errorArray.length; i<j; i++);
+         var txt = document.createElement('li');
+         txt.innnerHTML = errorArray[i];
+         errMsg.appendChild(txt);
+   }
+   
+}
+e.preventDefault();
+return false; */
     
     
 	// Variable defaults

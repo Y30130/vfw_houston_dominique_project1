@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- Dominique Houston -->
 <!-- VFW 1306 -->
-<!-- Assignment 1 -->
+<!-- Assignment 3 -->
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -41,55 +41,63 @@
     
     <! -- Begin Form -- >
     <form action="#" method="post" id="bookeepForm">
-      <fieldset>
+      <fieldset id="Bookeep Title">
+	      <legend>Add New Bookeep</legend>
+			<ul id="errors"></ul>
+      
         <legend>
 	        <strong>
-	        	<medium>Add A Title to Bookeep</medium>
+	        	<medium>Save A Title to Bookeep</medium>
 	        </strong>
         </legend>
-        
-        <p>
+        <ul id="entry">
+        <li>
           <label class="headLabel"><strong>Bookeep Title Info</strong></label>
-        </p>
+        </li>
         
-        <p>
+        <li>
           <label for="Title">Title</label>
           <input type="text" id="workTitle" placeholder="Work Title" />
-        </p>
+        </li>
         
-        <p>
+        <li>
           <label for="authorName">Author:</label>
           <input type="text" id="workAuthorName" placeholder="Author Name" />
-        </p>
+        </li>
         
-        <p>
+        <li>
           <label for="authorName">Year Published:</label>
           <input type="text" id="workYearPublished" placeholder="Year Published" />
-        </p>
+        </li>
         
-        <p>
+        <li>
           <label for="authorName">URL (if applicable):</label>
           <input type="text" id="workUrl" placeholder="http://" />
-        </p>
+        </li>
         
-        <p>
+        <li>
           <label class="labelHead">Finished reading book/title?</label>
-        </p>
+        </li>
+        
         <div class="clear"></div>
-        <p>
+        <ul>
+        <li>
           <input type="radio" class="radioButton" name="readTitle" value="yes">
-          Yes</p>
-        <p>
+          Yes
+        </li>
+        <li>
           <input type="radio" name="readTitle" value="yes">
-          No</p>
+          No
+        </li>
+        </ul>
           
         <p>
           <label class="labelHead">Is this title a favorite?</label>
         </p>
         <div class="clear"></div>
-        <p>
+        <li>
           <input type="checkbox" id="fav" name="fav" value="favorite">
-          Save as Favorite</p>
+          Save as Favorite</li>
           
         <li id="dropDown">
           <p>
@@ -134,10 +142,14 @@
         </p>
         <div class="clear"></div>
         <input type="hidden" id="reader" value="evaluation">
-        
-        <p>
+        <li>
+	         <p>
           <input id="submit" type="button" value="SUBMIT">
         </p>
+        </li>
+        
+        </ul>
+       
       </fieldset>
     </form>
     <! -- End Form  -- > 
