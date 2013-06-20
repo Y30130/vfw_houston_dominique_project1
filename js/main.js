@@ -84,7 +84,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	    	item.workAuthorPublished 	= ["Year Published:", $('workYearPublished').value];
 	    	item.workAuthorUrl 			= ["Work Author URL:", $('workUrl').value];
 	    	item.workCompleted			= ["Finished Reading:", completedValue];
-	    	item.favorite 				= ["Reason for Reading:", favoriteValue];
+	    	item.favorite 				= ["Saved as Favorite? :", favoriteValue];
 	    	item.platform				= ["Platform:", $('platforms').value];
 	    	item.notes 					= ["Notes:",$('notes').value];
 	    	item.readStart		    	= ["Read Start Date:",$('readStart').value];
@@ -139,7 +139,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	    editLink.href = "#";
 	    editLink.key = key;
 	    var editText = "Edit Title";
-	    // editLink.addEventListener("click", editItem);
+	    editLink.addEventListener("click", editItem);
 	    editLink.innerHTML = editText;
 	    linksLi.appendChild(editLink);
 	    
@@ -157,6 +157,51 @@ window.addEventListener("DOMContentLoaded", function(){
 	    deleteLink.innerHTML = deleteText;
 	    linksLi.appendChild(deleteLink);
     }
+    
+    // Edit Single Work Title 
+    function editItem() {
+	    // grab the data from item in Local Storage
+	    var value = localStorage.getItem(this.key);
+	    var item = JSON.parse(value);
+	    
+	    // Show the form
+	    toggleControls("off");
+
+	    
+	    //populate the form fields with current localSotrage values
+	    $('platforms').value = item.platform[1];
+	    $('workTitle').value = item.workTitle[1];
+	    $('workAuthorName').value = item.workAuthorName[1];
+	    $('workYearPublished').value = item.workAuthorPublished[1];
+	    $('workUrl').value = item.workAuthorUrl[1];
+	    var radios = document.forms[0].readTitle;
+	    for(var i=0; i<radios.length; i++){
+		    if(radios[i].value == "Yes" && item.workCompleted[1] == "Yes"){
+			    radios[i].setAttribute("checked", "checked");
+		    }else if (radios[i].value == "No" && item.workCompleted[1] == "No"){
+			    radios[i].setAttribute("checked", "checked"); 
+		    }
+	    }
+	    if(item.favorite[1] == "Yes") {
+		    $('fav').setAttribute("checked","checked");
+	    }
+	    $('notes').value = item.notes[1];
+	    $('readStart').value = item.readStart[1];
+	    $('readFinish').value = item.readFinish[1];
+	    $('stars').value = item.stars[1];
+
+
+	    // Remove the initial listener from the input "save" button
+	    save.removeEventListener("click", storeData);
+	    // Change submit button value to "edit button"
+	    $('submit').value = "Edit Title";
+	    var editSubmit = $('submit');
+	    // save the key value as property of editSubmit Event
+	    // to use value when saving data that has been edited
+	    editSubmit.addEventListenener("click", validate);
+	    editSubmit.key = this.key;
+	    
+    }
 
 
     // Clear Data
@@ -171,6 +216,12 @@ window.addEventListener("DOMContentLoaded", function(){
 	    }
     }
 
+
+// Validate Form Fields
+
+	function validate() {
+		
+	}
 
     
     
