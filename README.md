@@ -1,4 +1,4 @@
-vfw_houston_dominique_project2
+vfw_houston_dominique_project3
 ==============================
 
-FSU VFW Project 2
+FSU VFW Project 3
