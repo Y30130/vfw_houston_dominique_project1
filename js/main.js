@@ -72,8 +72,17 @@ window.addEventListener("DOMContentLoaded", function(){
     
     
     // Save Our Data
-    function storeData () {
-	    var id 				= Math.floor(Math.random()*10000001);
+    function storeData(key) {
+    	// if there is no key, this mean there is a new title, and a new key is necessary
+    	
+    	if(!key) {
+	    	var id 				= Math.floor(Math.random()*10000001);
+    	}else {
+    		// set id to existing key we're editing so it will save over data
+    		// the key is same that's been passed along from the editSubmit event handler
+    		// to the validate function, and then passed here into the storeData function.
+	    	id = key;
+    	}
 	    // Gather all form field values and store in an object
 	    // Object properties contain an array with the form label and input value.
 	    getSelectedRadio();
@@ -92,7 +101,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	    	item.stars 					= ["Rating:",$('stars').value];
 	    	// Save data into Local Storage: Use Stringify to convert our object to a string
 	    	localStorage.setItem(id, JSON.stringify(item));
-	    	alert("Bookept!")
+	    	alert("Title saved. Bookept!")
     }
     
     // Display our Data on the Front-End
@@ -153,7 +162,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	    deleteLink.href = "#";
 	    deleteLink.key = key;
 	    var deleteText = "Remove Title";
-	    // deleteLink.addEventListener("click", deleteItem);
+	    deleteLink.addEventListener("click", deleteItem);
 	    deleteLink.innerHTML = deleteText;
 	    linksLi.appendChild(deleteLink);
     }
@@ -203,6 +212,17 @@ window.addEventListener("DOMContentLoaded", function(){
 	    
     }
 
+    // Delete Single Item
+    function deleteItem() {
+	    var ask = confirm("Are you sure you want to delete this title?");
+	    if(ask) {
+		    localStorage.removeItem(this.key);
+		    alert("Title was deleted!");
+		    window.location.reload();
+	    }else {
+		    alert("Title was NOT removed.");
+	    }
+    }
 
     // Clear Data
     function clearData() {
@@ -285,8 +305,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			e.preventDefault();
 			return false;
 		}else {
-		 // If everything checks out, store data.
-		 storeData();	
+		 // If everything checks out, store data. Send the key value (which came from editData function
+		 // Remember key value, passed through editSubmit event listener as a propery
+		 storeData(this.key);	
 		}
 		
 	}
