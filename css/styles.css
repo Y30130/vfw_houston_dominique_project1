@@ -136,6 +136,7 @@ nav ul li {
 #addNew { margin-left: -33px; }
 
 /* Form Styles */
+#errors {color:red;}
 
 form {
 	color: #111;

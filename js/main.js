@@ -198,7 +198,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	    var editSubmit = $('submit');
 	    // save the key value as property of editSubmit Event
 	    // to use value when saving data that has been edited
-	    editSubmit.addEventListenener("click", validate);
+	    editSubmit.addEventListener("click", validate);
 	    editSubmit.key = this.key;
 	    
     }
@@ -219,16 +219,82 @@ window.addEventListener("DOMContentLoaded", function(){
 
 // Validate Form Fields
 
-	function validate() {
+	function validate(e) {
+		// define the elements we want to check
+		var getWorkAuthorName = $('workAuthorName');
+		var getWorkTitle = $('workTitle');
+		var getWorkAuthorPublished = $('workYearPublished');
+		var getPlatform = $('platforms');
+		var getWorkUrl = $('workUrl');
+		
+		//Reset Error Messages
+		errMsg.innerHTML = "";
+		getWorkAuthorName.style.border = "1px solid black";
+		getWorkTitle.style.border = "1px solid black";
+		getWorkAuthorPublished.style.border = "1px solid black";
+		getPlatform.style.border = "1px solid black";
+		getWorkUrl.style.border = "1px solid black";
+		
+		
+		// Get Error Messages
+		var messageAry = [];
+		
+		// Platform Validation
+		if(getPlatform.value === "-- Choose A Platform --"){
+			var platformError = "Please choose a platform.";
+			getPlatform.style.border = "1px solid red";
+			messageAry.push(platformError);
+		}
+		
+		// Work Title Validation
+		if(getWorkTitle.value === ""){
+			workTitleError = "Please enter a valid work title.";
+			getWorkTitle.style.border ="1px solid red";
+			messageAry.push(workTitleError);
+		}
+		
+		// Author Name Validation
+		if(getWorkAuthorName.value === ""){
+			workAuthorNameError = "Please enter an author name.";
+			getWorkAuthorName.style.border ="1px solid red";
+			messageAry.push(workAuthorNameError);
+		}
+		
+		// Year Published  Validation
+		if(getWorkAuthorPublished.value === ""){
+			workAuthorPublishedError = "Please enter a year.";
+			getWorkAuthorPublished.style.border ="1px solid red";
+			messageAry.push(workAuthorPublishedError);
+		}
+		
+		// URL Validation
+		var re = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+		if(!re.exec(getWorkUrl.value)){
+			var UrlError = "Please enter a valid link related to the title (purchase, review, etc..).";
+			getWorkUrl.style.border = "1px solid red";
+			messageAry.push(UrlError);
+		}
+		
+		// If errors occurr, display them on front-end
+		if(messageAry.length >= 1){
+			for(var i=0, j=messageAry.length; i < j; i++) {
+				var txt = document.createElement('li');
+				txt.innerHTML = messageAry[i];
+				errMsg.appendChild(txt);
+			}
+			e.preventDefault();
+			return false;
+		}else {
+		 // If everything checks out, store data.
+		 storeData();	
+		}
 		
 	}
 
-    
-    
-	// Variable defaults
+   	// Variable defaults
 	var readPlatform = ["-- Choose A Platform --", "Book - Paperback", "Book - Hardcover", "Book - Other", "Digital - Personal Computer", "Digital - Tablet/eReader", "Digital - Other"], 
 	completedValue, 
-	favoriteValue = "No";
+	favoriteValue = "No"; errMsg = $('errors');
     makePlatforms();
 
 // Set Link & Submit Click Events
