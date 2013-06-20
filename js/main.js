@@ -124,11 +124,40 @@ window.addEventListener("DOMContentLoaded", function(){
 		            createSubli.innerHTML = optSubText;
 		            createSubList.appendChild(linksLi);
 		         }
-		         createItemLinks();  //Creates the edit and delete link for the items in LocalStorage
+		         createItemLinks(localStorage.key(i), linksLi);  // Creates the edit and delete link for the items in LocalStorage
 		         
 		      }
 		    
 		   }
+
+
+    // Make Item Links
+    // Create the edit and delete links for each stored item when displayed
+    function createItemLinks(key, linksLi) {
+    	// add edit single item link
+	    var editLink = document.createElement('a');
+	    editLink.href = "#";
+	    editLink.key = key;
+	    var editText = "Edit Title";
+	    // editLink.addEventListener("click", editItem);
+	    editLink.innerHTML = editText;
+	    linksLi.appendChild(editLink);
+	    
+	    // add line break
+	    var lineBreak = document.createElement('br');
+	    linksLi.appendChild(lineBreak);
+	    
+	    
+	    // add delete single item link
+	    var deleteLink = document.createElement('a');
+	    deleteLink.href = "#";
+	    deleteLink.key = key;
+	    var deleteText = "Remove Title";
+	    // deleteLink.addEventListener("click", deleteItem);
+	    deleteLink.innerHTML = deleteText;
+	    linksLi.appendChild(deleteLink);
+    }
+
 
     // Clear Data
     function clearData() {
